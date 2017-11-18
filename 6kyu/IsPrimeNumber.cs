@@ -13,7 +13,7 @@ public static class IsPrimeNumber
 {
   public static bool IsPrime(int n)
   {
-    if (n == 0 || n == 1)
+    if (n <= 1)
     {
       return false;
     }
