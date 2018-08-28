@@ -19,16 +19,37 @@
  */
 
 public class SpinWords {
+	public static void main(String[] args) {
+		String s = "Hey fellow warriors";
+		String s2 = "Just kidding [there is still] one more";
 
-  public String spinWords(String sentence) {
-    String[] strArray = sentence.split(" ");
-		
+		System.out.println(spinWords(s));
+		System.out.println(spinWords(s2));
+	}
+	public static String spinWords(String sentence) {
+		String[] strArray = sentence.split(" ");
+
 		for (int i = 0; i < strArray.length; i++) {
 			if (strArray[i].length() > 5) {
-				String reversed = new StringBuilder(strArray[i]).reverse().toString();
-				strArray[i] = reversed;
+				if (strArray[i].contains("[")) {
+					String bracket = strArray[i].substring(0,1);
+					String rest = new StringBuilder(strArray[i].substring(1,strArray[i].length())).reverse().toString();
+					String reversed = bracket.concat(rest);
+					strArray[i] = reversed;
+				}
+				else if (strArray[i].contains("]")) {
+					String bracket = strArray[i].substring(strArray[i].length()-1);
+					String rest = new StringBuilder(strArray[i].substring(0,strArray[i].length()-1)).reverse().toString();
+					String reversed = rest.concat(bracket);
+					strArray[i] = reversed;
+				}
+				else {
+					String reversed = new StringBuilder(strArray[i]).reverse().toString();
+					strArray[i] = reversed;
+				}
 			}
 		}
+
 		String res = String.join(" ", strArray);
 		return res;
 	}
