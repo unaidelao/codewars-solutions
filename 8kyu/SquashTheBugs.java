@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * Squash the bugs - Java
  * 
