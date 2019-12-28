@@ -7,7 +7,7 @@ import java.util.Arrays;
  * 
  * @author Unai de la O
  */
-public class Maps {
+public class LostWithoutAMap {
     public static int[] map(int[] arr) {
         return Arrays.stream(arr).map(n -> n * 2).toArray();
     }
