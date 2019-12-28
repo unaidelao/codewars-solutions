@@ -10,7 +10,7 @@ import java.util.*;
  * 
  * @author Unai de la O
  */
-public class Kata {
+public class SquashTheBugs {
 
     public static int findLongest(String str) {
         String[] spl = str.split(" ");
