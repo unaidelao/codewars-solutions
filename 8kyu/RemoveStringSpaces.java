@@ -5,7 +5,7 @@
  * 
  * @author Unai de la O
  */
-class Kata {
+class RemoveStringSpaces {
     static String noSpace(final String x) {
         return x.replace(" ", "");
     }
